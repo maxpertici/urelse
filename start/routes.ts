@@ -12,8 +12,10 @@ const BookmarksController = () => import('#controllers/bookmarks_controller')
 
 router.get('/', async () => {
   return {
-    root: 'ur|else',
+    react: 'ur|else',
   }
 })
 
-router.get('/bookmarks', [BookmarksController, 'index'])
+router.get('api/v1/bookmarks', [BookmarksController, 'index'])
+
+router.get('api/v1/bookmarks/:id', [BookmarksController, 'find'])
