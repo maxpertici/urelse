@@ -8,9 +8,12 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const BookmarksController = () => import('#controllers/bookmarks_controller')
 
 router.get('/', async () => {
   return {
-    hello: 'world',
+    root: 'ur|else',
   }
 })
+
+router.get('/bookmarks', [BookmarksController, 'index'])
